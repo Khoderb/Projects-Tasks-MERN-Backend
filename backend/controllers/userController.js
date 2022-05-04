@@ -117,6 +117,8 @@ const profile = async (req,res) => {
     const { user } = req ;
     res.json( user );
 }
+
+
 export{
     registry,
     auth,

@@ -8,7 +8,9 @@ router.post("/", registry);
 router.post("/login", auth);
 router.get("/confirm/:token", confirm);
 router.post("/reset_password", forgotPassword);
-router.route("/reset_password/:token" ).get(matchToken).post(newPassword);
+router.route("/reset_password/:token")
+    .get(matchToken)
+    .post(newPassword);
 router.get("/profile", checkAuth, profile);
 
 

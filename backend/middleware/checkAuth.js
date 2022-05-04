@@ -13,15 +13,16 @@ const checkAuth = async ( req, res, next ) =>{
             req.user = await User.findById(decoded.id).select(
                 "-password -confirmed -token -__v -createdAt -updatedAt "
             );
-                
-                return next();
-            }catch(err){   
+
+            return next();
+        }catch(err){   
                 return res.status(401).json({ msg: "Unauthorized" });
             }
-    }else{
+        }
+    if(!req.headers.authorization){
         return res.status(401).json({ msg: "Unauthorized" });
     }
-    
+    next();
 }
 
 export default checkAuth;
