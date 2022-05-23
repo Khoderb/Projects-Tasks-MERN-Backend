@@ -16,7 +16,7 @@ const checkAuth = async ( req, res, next ) =>{
 
             return next();
         }catch(err){   
-                return res.status(401).json({ msg: "Unauthorized" });
+                return res.status(401).json({ msg: err.message });
             }
         }
     if(!req.headers.authorization){
