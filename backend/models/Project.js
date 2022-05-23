@@ -25,14 +25,20 @@ const projectSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'User',
     },
-//arreglo de usuarios
+    //arreglo de usuarios
     contributors:[
         {
             type: mongoose.Schema.Types.ObjectId,
             ref:'User',
         }
     ],
-//arreglo de tareas
+    //arreglo de tareas
+    tasks:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Task"
+        }
+    ],
 },
     {
         timestamps: true

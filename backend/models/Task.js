@@ -24,11 +24,15 @@ const taskSchema = new mongoose.Schema(
     priority:{
         type:String,
         required:true,
-        enum:["low","medium","high"],
+        enum:["Low","Medium","High"],
     },
     project:{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Project',
+    },
+    completed:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
     },
 },{
     timestamps: true,
