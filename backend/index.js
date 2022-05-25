@@ -19,16 +19,13 @@ conectarDB(); //3°
 const whiteList = [process.env.FRONTEND_URL];
 const corsOptions = {
     origin: function(origin, callback){
-        if(whiteList.indexOf(origin) !== -1){
-            //if it's includes the origin on whiteList
+        if(whiteList.indexOf(origin) !== -1 || !origin ){
             callback(null,true);
         }else{
-        //else acces denied
-        callback(new Error('Not allowed by CORS'));
-
+            callback(new Error('Not allowed by CORS'));
         }
-
     },
+    
 }
 app.use(cors(corsOptions));
 
