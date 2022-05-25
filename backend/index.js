@@ -16,7 +16,7 @@ dotenv.config(); //2°
 conectarDB(); //3°
 
 //cors config
-const whiteList = [process.env.FRONTEND_URL];
+const whiteList = [process.env.FRONTEND_URL, "https://spontaneous-meringue-e8cd88.netlify.app/"];
 const corsOptions = {
     origin: function(origin, callback){
         if(whiteList.indexOf(origin) !== -1 || !origin ){
@@ -25,8 +25,8 @@ const corsOptions = {
             callback(new Error('Not allowed by CORS'));
         }
     },
-    
 }
+
 app.use(cors(corsOptions));
 
 
@@ -36,7 +36,7 @@ app.use("/api/projects", projectRoutes); //4°
 app.use("/api/task", taskRoutes); //4°
 
 
-const PORT = process.env.port || 3800; 
+const PORT = process.env.PORT || 3800; 
 
 const server = app.listen(PORT, () => {
      console.log(`MERN app listening on port ${PORT}!`);
