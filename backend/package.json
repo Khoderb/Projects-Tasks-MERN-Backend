@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "the upTask back using MERN stack",
+  "description": "the upTask back using express & node",
   "type": "module",
   "main": "index.js",
   "scripts": {
