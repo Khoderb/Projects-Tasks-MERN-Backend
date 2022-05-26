@@ -8,19 +8,7 @@
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
-    "build" : [
-            {
-                "src": "index.js",
-                "use": "@vercel/node"
-            }
-        ],
-        "routes": [
-            {
-                "src": "/(.*)",
-                "dest": "/"
-            }
-        
-        ],
+
   "author": "Bernardo D'Addario",
   "license": "ISC",
   "dependencies": {
