@@ -8,9 +8,6 @@
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
-
-  "build":{
-    "version":2,
     "build" : [
             {
                 "src": "index.js",
@@ -23,9 +20,7 @@
                 "dest": "/"
             }
         
-        ]
-    
-    },
+        ],
   "author": "Bernardo D'Addario",
   "license": "ISC",
   "dependencies": {
